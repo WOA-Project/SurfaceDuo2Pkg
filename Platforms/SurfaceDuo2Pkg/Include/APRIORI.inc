@@ -14,7 +14,12 @@ APRIORI DXE {
 
     # Core Drivers
     INF EmbeddedPkg/MetronomeDxe/MetronomeDxe.inf
-    INF ArmPkg/Drivers/TimerDxe/TimerDxe.inf
+    
+    FILE DRIVER = 49ea041e-6752-42ca-b0b1-7344fe2546b7 {
+            SECTION DXE_DEPEX = SurfaceDuo2Pkg/FirmwareBinaries/BOOT.MXF.1.0-00848-LAHAINA-1/volume-0/file-1/section0/section1/volume-0/file-49ea041e-6752-42ca-b0b1-7344fe2546b7/section0.dxe.depex
+            SECTION PE32 = SurfaceDuo2Pkg/FirmwareBinaries/BOOT.MXF.1.0-00848-LAHAINA-1/volume-0/file-1/section0/section1/volume-0/file-49ea041e-6752-42ca-b0b1-7344fe2546b7/section1.pe
+            SECTION UI = "ArmTimerDxe"
+    }
 
     FILE DRIVER = f541d663-4a48-40aa-aabf-ff158ccae34c {
             SECTION DXE_DEPEX = SurfaceDuo2Pkg/FirmwareBinaries/BOOT.MXF.1.0-00848-LAHAINA-1/volume-0/file-1/section0/section1/volume-0/file-f541d663-4a48-40aa-aabf-ff158ccae34c/section0.dxe.depex
