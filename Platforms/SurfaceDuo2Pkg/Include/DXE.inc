@@ -232,12 +232,6 @@
             SECTION PE32 = SurfaceDuo2Pkg/FirmwareBinaries/BOOT.MXF.1.0-00848-LAHAINA-1/volume-0/file-2/section0/section1/volume-0/file-42031f68-1f0b-429b-93f1-0eb0cf89ddbf/section1.pe
             SECTION UI = "IPCCDxe"
     }
-
-    FILE DRIVER = 7942a7eb-b7d5-4e2e-b908-831e4de55b58 {
-            SECTION DXE_DEPEX = SurfaceDuo2Pkg/FirmwareBinaries/BOOT.MXF.1.0-00848-LAHAINA-1/volume-0/file-2/section0/section1/volume-0/file-7942a7eb-b7d5-4e2e-b908-831e4de55b58/section0.dxe.depex
-            SECTION PE32 = SurfaceDuo2Pkg/FirmwareBinaries/BOOT.MXF.1.0-00848-LAHAINA-1/volume-0/file-2/section0/section1/volume-0/file-7942a7eb-b7d5-4e2e-b908-831e4de55b58/section1.pe
-            SECTION UI = "GlinkDxe"
-    }
     
     FILE DRIVER = 1bfbafda-52eb-4550-b952-d663e0aa97a2 {
             SECTION DXE_DEPEX = SurfaceDuo2Pkg/FirmwareBinaries/BOOT.MXF.1.0-00848-LAHAINA-1/volume-0/file-2/section0/section1/volume-0/file-1bfbafda-52eb-4550-b952-d663e0aa97a2/section0.dxe.depex
