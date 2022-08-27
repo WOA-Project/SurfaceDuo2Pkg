@@ -34,6 +34,7 @@
 [Packages]
   MdePkg/MdePkg.dec
   ArmPkg/ArmPkg.dec
+  SurfaceDuo2Pkg/SurfaceDuo2Pkg.dec
 
 [LibraryClasses]
   ArmLib
