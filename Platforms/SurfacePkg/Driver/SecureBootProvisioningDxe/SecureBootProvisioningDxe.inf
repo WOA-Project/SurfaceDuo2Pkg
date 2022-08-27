@@ -16,7 +16,7 @@
   EmbeddedPkg/EmbeddedPkg.dec
   MdeModulePkg/MdeModulePkg.dec
   MsCorePkg/MsCorePkg.dec
-  SurfaceDuo2Pkg/SurfaceDuo2Pkg.dec
+  SurfacePkg/SurfacePkg.dec
 
 [LibraryClasses]
   BaseLib
