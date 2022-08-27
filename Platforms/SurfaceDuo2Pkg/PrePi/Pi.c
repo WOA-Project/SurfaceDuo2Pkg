@@ -28,9 +28,7 @@
 #include <Library/PlatformHobLib.h>
 #include <Configuration/DeviceMemoryMap.h>
 
-#define TLMM_WEST  0x0F100000
-#define TLMM_NORTH 0x0F900000
-#define TLMM_SOUTH 0x0F500000
+#define TLMM_ADDR 0x0F100000
 
 #define TLMM_ADDR_OFFSET_FOR_PIN(x) (0x1000 * x)
 
@@ -40,7 +38,7 @@
 #define TLMM_PIN_INTERRUPT_STATUS_REGISTER 0xC
 #define TLMM_PIN_INTERRUPT_TARGET_REGISTER TLMM_PIN_INTERRUPT_CONFIG_REGISTER
 
-#define LID0_GPIO121_STATUS_ADDR (TLMM_SOUTH + TLMM_ADDR_OFFSET_FOR_PIN(121) + TLMM_PIN_IO_REGISTER)
+#define LID0_GPIO121_STATUS_ADDR (TLMM_ADDR + TLMM_ADDR_OFFSET_FOR_PIN(107) + TLMM_PIN_IO_REGISTER)
 
 #define LINUX_KERNEL_ARCH_MAGIC_OFFSET 0x38
 #define LINUX_KERNEL_AARCH64_MAGIC 0x644D5241
@@ -118,7 +116,7 @@ VOID Main(IN VOID *StackBase, IN UINTN StackSize, IN VOID *KernelLoadAddress, IN
   UINTN UefiMemoryBase = 0;
   UINTN UefiMemorySize = 0;
 
-  //UINT32 Lid0Status    = 0;
+  UINT32 Lid0Status    = 0;
 
 #if USE_MEMORY_FOR_SERIAL_OUTPUT == 1
   SerialPortLocateArea2(&PStoreMemoryRegion2);
@@ -158,7 +156,7 @@ VOID Main(IN VOID *StackBase, IN UINTN StackSize, IN VOID *KernelLoadAddress, IN
        "Kernel Load Address = 0x%llx, Device Tree Load Address = 0x%llx\n",
        KernelLoadAddress, DeviceTreeLoadAddress));
 
-  /*if (IsLinuxAvailable(KernelLoadAddress)) {
+  if (IsLinuxAvailable(KernelLoadAddress)) {
     Lid0Status = MmioRead32(LID0_GPIO121_STATUS_ADDR) & 1;
 
     DEBUG(
@@ -172,7 +170,7 @@ VOID Main(IN VOID *StackBase, IN UINTN StackSize, IN VOID *KernelLoadAddress, IN
       // We should never reach here
       CpuDeadLoop();
     }
-  }*/
+  }
 
   // Set up HOB
   HobList = HobConstructor(
